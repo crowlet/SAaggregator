@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      relativeToChangelogFile: true
+      file: db.001-initial-schema.yaml
+  - include:
+      relativeToChangelogFile: true
+      file: db.002-test-data.yaml

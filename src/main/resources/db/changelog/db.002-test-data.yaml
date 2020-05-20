@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: Add_test_user_data_20052020
+      author: mpanek
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: '854E18B9C8E34440BF77FFBFC35E1B97'
+              - column:
+                  name: name
+                  value: 'First User'
+              - column:
+                  name: birth_date
+                  value: '1956-02-03'
+              - column:
+                  name: sex
+                  value: 'F'
+            tableName: SUBJECT
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: '5BFF95B56ECA479ABEFC9819F51CCF6F'
+              - column:
+                  name: name
+                  value: 'Second User'
+              - column:
+                  name: birth_date
+                  value: '1966-02-03'
+              - column:
+                  name: sex
+                  value: 'F'
+            tableName: SUBJECT
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 'C2A14EF9518544FDBBEFC69DF88FC72D'
+              - column:
+                  name: name
+                  value: 'Third User'
+              - column:
+                  name: birth_date
+                  value: '1976-02-03'
+              - column:
+                  name: sex
+                  value: 'M'
+            tableName: SUBJECT
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 'F72904C2564843969B04A7233C2BA6A9'
+              - column:
+                  name: name
+                  value: 'Fourth User'
+              - column:
+                  name: birth_date
+                  value: '1986-02-03'
+              - column:
+                  name: sex
+                  value: 'F'
+            tableName: SUBJECT
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 'E3f4A48403C4417298887DA4110A4EF3'
+              - column:
+                  name: name
+                  value: 'Fifth User'
+              - column:
+                  name: birth_date
+                  value: '1996-02-03'
+              - column:
+                  name: sex
+                  value: 'M'
+            tableName: SUBJECT

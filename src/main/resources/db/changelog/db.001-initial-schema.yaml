@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create_user_table_20052020
+      author: mpanek
+      changes:
+        - createTable:
+            tableName: SUBJECT
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_SUBJECT
+                  name: ID
+                  type: UUID
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: birth_date
+                  type: date
+              - column:
+                  name: sex
+                  type: varchar(1)
+        - createTable:
+            tableName: STATE
+            columns:
+              - column:
+                  name: SUBJECT_ID
+                  type: UUID
+              - column:
+                  name: timestamp
+                  type: date
+              - column:
+                  name: name
+                  type: varchar(100)
+        - addForeignKeyConstraint:
+            baseColumnNames: SUBJECT_ID
+            baseTableName: STATE
+            referencedColumnNames: ID
+            referencedTableName: SUBJECT
+            constraintName: FK_SUBJECT_STATE
