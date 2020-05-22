@@ -2,7 +2,9 @@ package pl.wat.wcy.panek.saaggregator.adapter.messaging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.IMqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Service
+@Slf4j
 public class MqttReceiver {
 
     private final ObjectMapper objectMapper;
@@ -25,11 +28,15 @@ public class MqttReceiver {
         this.topic = topic;
     }
 
-    @SneakyThrows
+
     public void init() {
-        client.subscribe(topic, (t, message) -> {
-            listener.event(this.objectMapper.readValue(message.getPayload(), Map.class));
-        });
+        try {
+            client.subscribe(topic, (t, message) -> {
+                listener.event(this.objectMapper.readValue(message.getPayload(), Map.class));
+            });
+        } catch (MqttException e) {
+            log.error("Mqtt error: ", e);
+        }
     }
 
 }

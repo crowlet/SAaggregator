@@ -4,5 +4,6 @@ public enum StateValue {
     BLACK,
     RED,
     YELLOW,
-    GREEN
+    GREEN,
+    NO_DATA
 }

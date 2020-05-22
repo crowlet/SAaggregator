@@ -4,5 +4,6 @@ public enum Category {
     BLACK,
     RED,
     YELLOW,
-    GREEN
+    GREEN,
+    NO_DATA
 }
