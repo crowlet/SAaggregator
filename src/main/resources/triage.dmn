@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0jvz4hv" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.3">
+  <decision id="triage" name="TRIAGE">
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="spo2">
+        <inputExpression id="inputExpression_1" typeRef="double">
+          <text>spo2</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0k2y1o3" label="ecg">
+        <inputExpression id="LiteralExpression_1t1rlls" typeRef="double">
+          <text>ecg</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string">
+        <outputValues id="UnaryTests_1xk1yuv">
+          <text>"BLACK","RED","YELLOW","GREEN"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_0lqds98">
+        <inputEntry id="UnaryTests_1hmf22r">
+          <text>&gt;= 95, &lt; 99</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i4druz">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tddugb">
+          <text>"GREEN"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1oby48f">
+        <inputEntry id="UnaryTests_1vkgvhm">
+          <text>&lt; 95, &gt;= 90</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05vpz30">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1t02scc">
+          <text>"YELLOW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0db760a">
+        <inputEntry id="UnaryTests_17bwdvt">
+          <text>&lt; 90</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08h218m">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ogrlw7">
+          <text>"RED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lw5beq">
+        <inputEntry id="UnaryTests_0aztwj4">
+          <text>&gt;= 95</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v5ctd7">
+          <text>&lt;5, &gt;=1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1b9hlui">
+          <text>"YELLOW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ep23hq">
+        <inputEntry id="UnaryTests_0sn71fi">
+          <text>&lt; 95, &gt;= 90</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_021xxcq">
+          <text>&lt;5, &gt;= 1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0tqwd1u">
+          <text>"RED"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0cu4or9">
+        <inputEntry id="UnaryTests_0qd8v1r">
+          <text>&gt;= 99</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1iiafbq">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kz8o34">
+          <text>"YELLOW"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ikbtnu">
+        <inputEntry id="UnaryTests_0rz5oot">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02re4v3">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1lbl7gk">
+          <text>"NO_DATA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nk4bur">
+        <inputEntry id="UnaryTests_1an5kep">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0khtm8o">
+          <text>&gt; 0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vpjiv6">
+          <text>"NO_DATA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0vlir54">
+        <inputEntry id="UnaryTests_0mw7mrf">
+          <text>&gt; 0</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_152n2bn">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tlta7r">
+          <text>"NO_DATA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bherbh">
+        <inputEntry id="UnaryTests_1tcsvcz">
+          <text>&lt; 90</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pe7p72">
+          <text>&lt; 5, &gt;= 1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_172bbkz">
+          <text>"BLACK"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

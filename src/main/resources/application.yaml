@@ -5,7 +5,7 @@ application:
     port: "${MQTT_PORT:1883}"
     topic: "${MQTT_TOPIC:HEALTH}"
   camunda:
-    dmnFileResourcePath: diagram_1.dmn
+    dmnFileResourcePath: triage.dmn
 
 
 server:
