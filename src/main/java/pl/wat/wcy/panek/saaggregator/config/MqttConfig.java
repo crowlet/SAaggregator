@@ -15,7 +15,7 @@ public class MqttConfig {
 
     @Bean
     IMqttClient mqttClient(
-            @Value("${application.mqtt.protocol}://${application.mqtt.host}:${application.mqtt.port}")
+            @Value("${application.mqtt.host}:${application.mqtt.port}")
             final String mqttBrokerUrl,
             final PublisherIdProvider publisherIdProvider,
             final MqttConnectOptions options
