@@ -5,7 +5,6 @@ import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
-import org.camunda.bpm.engine.variable.impl.VariableMapImpl;
 import org.springframework.stereotype.Component;
 import pl.wat.wcy.panek.saaggregator.domain.triage.Category;
 import pl.wat.wcy.panek.saaggregator.domain.triage.TriageDataWrapper;

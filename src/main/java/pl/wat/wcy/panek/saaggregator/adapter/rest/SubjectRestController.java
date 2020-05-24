@@ -1,6 +1,7 @@
 package pl.wat.wcy.panek.saaggregator.adapter.rest;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class SubjectRestController {
     private final SubjectAppService subjectAppService;
 
     @GetMapping("all")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public List<Subject> allSubjects() {
         return subjectAppService.all();
     }

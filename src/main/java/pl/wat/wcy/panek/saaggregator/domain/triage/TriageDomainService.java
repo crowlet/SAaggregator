@@ -13,8 +13,7 @@ public class TriageDomainService {
     private final TriageDecisionMaker triageDecisionMaker;
 
     public Map<UUID, Category> determineAndGroupCategories(Map<String, Object> data) {
-        var categories = Category.values();
-        Set<UUID> users = usersIds(data);
+        var users = usersIds(data);
         return users.stream().collect(Collectors.toMap(v -> v, v -> decide(v, data)));
     }
 
